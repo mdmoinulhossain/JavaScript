@@ -1,26 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Function</title>
-</head>
-<body>
-    <input type="number" id="base">
-    <input type="number" id="square" >
+  </head>
+  <body>
+    <input type="number" id="base" />
+    <input type="number" id="square" />
     <button type="submit" id="submit" onclick="power()">Submit</button>
 
-    <script>        
-        // Function
-        function power() {
+    <!-- Basic Theories -->
+
+    <!-- 
+        1. Declaring a function: When you declare a function, you are defining what the function does and what arguments it takes. You typically declare a function using a function keyword followed by the function name and its parameters, like this:
+        <code>
+        function addNumbers(num1, num2) {
+          return num1 + num2;
+        }
+        </code>
+        * This declares a function called addNumbers that takes two parameters num1 and num2 and returns their sum.
+
+        2. Assigning a function to a variable: In some programming languages, functions can be assigned to variables just like any other value. When you assign a function to a variable, you are creating a reference to that function that you can use later. Here's an example:
+        <code>
+            const addNumbers = function(num1, num2) {
+             return num1 + num2;
+            };
+        </code>
+        * This creates a variable called addNumbers that holds a reference to the same function as in the previous example.
+
+        3. Calling a function: Finally, when you call a function, you are actually executing the code inside the function. To call a function, you simply use the function name followed by its arguments inside parentheses. Here's an example:
+        <code>
+            const result = addNumbers(2, 3);
+            console.log(result); // Output: 5
+        </code>
+        * This calls the addNumbers function with the arguments 2 and 3, which returns 5. The result is then stored in a variable called result and printed to the console.
+    -->
+
+    <script>
+      // ********** Basic Function
+      function power() {
         // Get Value
         var base = document.getElementById("base").value;
         var square = document.getElementById("square").value;
         // Calculate
         var result = Math.pow(base, square);
-            alert(result); 
+        alert(result);
+      }
+
+      // ************** Function expressions
+      // anonymous (Without Name of function)
+      var square = function (base, square) {
+        return Math.pow(base, square);
+      };
+      // Call Function
+      var result = square(5, 3);
+      alert("From Function expression " + result);
+
+      // *************** Function hoisting
+      // Function hoisting is the ability of javascript to put a function declaration in the top of the code.
+      // Function hoisting is a common technique in javascript.
+      // Function hoisting is important because it allows us to write code that is logical and readable.
+      // example
+
+      // Call Function
+      var result = square(4, 2);
+      //  Declared Function
+      var square = function (base, square) {
+        return Math.pow(base, square);
+      };
+      alert("From Function hoisting " + result);
+
+      // *************** Function scope
+      /* Variables defined inside a function cannot be accessed from anywhere outside the function, because the variable is defined only in the scope of the function.
+      However, a function can access all variables and functions defined inside the scope in which it is defined. It's also can be nested function */
+      // Declared Function
+      function cube() {
+        var x = 5; // variable Declare and value assign
+        return x * x * x;
+      }
+      console.log(cube());
+
+      // *************** recursive function
+
+      /*  A recursive function is a function that calls itself within its own definition.
+    <code>
+        function factorial(n) {
+            if (n === 0) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
         }
-   </script>
-</body>
+        console.log(factorial(5)); // Output: 120
+     </code>   
+    */
+
+      function factorial(n) {
+        if (n === 0) {
+          return 1;
+        } else {
+          // recursive function
+          return n * factorial(n - 1);
+        }
+      }
+      console.log(factorial(5));
+
+      //   ************* Nested functions and closures
+      /*
+    A nested function is a function that is nested within another function.
+    * The inner function can be accessed only from statements in the outer function.
+    * The inner function forms a closure: the inner function can use the arguments and variables of the outer function, while the outer function cannot use the arguments and variables of the inner function.
+    */
+
+      // Example
+      function addSquares(a, b) {
+        function square(x) {
+          return x * x;
+        }
+        return square(a) + square(b);
+      }
+
+      console.log(addSquares(2, 3)); // 13
+      console.log(addSquares(3, 4)); // 25
+      console.log(addSquares(4, 5)); // 41
+
+      //   Multiply-nested functions"
+      function A(x) {
+        function B(y) {
+          function C(z) {
+            console.log(x + y + z);
+          }
+          C(3);
+        }
+        B(2);
+      }
+      A(1); // Logs 6 (which is 1 + 2 + 3)
+
+      //   ************* Function parameters
+      /*
+      There are two special kinds of parameter syntax: default parameters and rest parameters.
+    */
+    </script>
+  </body>
 </html>
