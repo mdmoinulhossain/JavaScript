@@ -16,6 +16,21 @@
       let car = cars[0];
 
       console.log(car);
+
+      // Looping Array Elements
+      const fruits = ["Banana", "Orange", "Apple", "Mango"];
+      let fLen = fruits.length;
+      let tag = "<ul>";
+      for (let i = 0; i < fLen; i++) {
+        tag += "<li>" + fruits[i] + "</li>";
+      }
+      tag += "</ul>";
+      document.write(tag);
+
+      // Adding Array Elements
+      const items = ["Banana", "Orange", "Apple"];
+      items.push("Lemon");
+      console.log(items);
     </script>
   </body>
 </html>
