@@ -12,13 +12,51 @@
       // push() method adds an element to the end of an array
       const fruits = ["apple", "banana", "orange"];
       fruits.push("Pineapple");
-      console.log(fruits);
+      console.log("push()- " + fruits);
 
       // *************** pop()
       // pop() method removes the last element from an array and returns that element
       const play = ["Football", "Cricket", "Basketball"];
       play.pop();
-      console.log(play);
+      console.log("pop()- " + play);
+
+      // *************** shift()
+      // shift() method removes the first element from an array and returns that element.
+      const sports = ["Football", "Cricket", "Basketball"];
+      sports.shift();
+      console.log("shift()- " + sports);
+
+      // *************** unshift()
+      // unshift() method adds an element to the beginning of an array.
+      const sports2 = ["Football", "Cricket", "Basketball"];
+      sports2.unshift("Tennis");
+      console.log("unshift()- " + sports2);
+
+      // *************** concat()
+      // concat() method joins two or more arrays.
+      const sports3 = ["Football", "Cricket", "Basketball"];
+      const sports4 = ["Tennis", "Badminton", "Table Tennis"];
+      const sports5 = ["Carram", "Ludo", "Hadudu"];
+      const sports6 = sports3.concat(sports4, sports5);
+      console.log("concat()- " + sports6);
+      // Alternate of concat
+      // console.log("concat()- " + sports3 + "," + sports4 + "," + sports5);
+
+      // ****************** Slice()
+      // slice() method returns a shallow copy of a portion of an array into a new array object.
+      const sports7 = ["Football", "Cricket", "Basketball", "Table Tennis"];
+      const sports8 = sports7.slice(1, 3);
+      // first parameter(1) removed from what it start, second parameter removed rest of items.
+      // not count from 0, it is from 1.
+      console.log("slice()- " + sports8);
+
+      // ***************** splice()
+      // splice() method changes the content of an array by removing existing elements and/or adding new elements.
+      const sports9 = ["Football", "Cricket", "Basketball", "Table Tennis"];
+      sports9.splice(1, 1, "Tennis");
+      console.log("splice()- " + sports9);
+      // The first parameter (1) defines the position where new elements should be added (spliced in).
+      // The second parameter (1) defines how many elements should be removed.
     </script>
   </body>
 </html>
