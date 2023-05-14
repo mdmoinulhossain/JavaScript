@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Destructuring assignment
+      /*   The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
+           Destructuring assignment is a feature in JavaScript that allows you to extract values from arrays or properties from objects and assign them to variables in a concise and convenient way.
+      */
+      //   Array Destructuring
+      const arr = [1, 2, 3, 4, 5];
+      const [a, b, c, d, e] = arr;
+      console.log(a, b, c, d, e);
+
+      //   Object Destructuring
+      const obj = {
+        apple: 1,
+        ball: 2,
+        cat: 3,
+        doll: 4,
+        ent: 5,
+      };
+      const { apple, ball, cat, doll, ent } = obj;
+      console.log(apple, ball, cat, doll, ent);
+    </script>
+  </body>
+</html>
