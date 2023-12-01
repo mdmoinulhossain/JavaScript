@@ -23,4 +23,6 @@ var myName;
 * var vs let vs const
 - var: Can declare multi variables in same name. And last one is overwrite it's value of above one.
 - let: Can't declare variable by same name. It's show an error message in console.
-- const: once a variable is assigned with `const`, it cannot be reassigned(value).
+- const: all convenience of `let` with, once a variable is assigned with `const`, it cannot be reassigned(value).
+
+*  everything to the right of the equals sign(=) is evaluated first.
